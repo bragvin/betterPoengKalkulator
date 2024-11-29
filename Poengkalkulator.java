@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
-public class Poengkalkulator {
+public class poengKalkulator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Skriv inn karakterene som en string (f.eks. abcde):");
         String input = scanner.nextLine().trim();
 
-        // Splitter inputen basert på komma og fjerner mellomrom
+        // Splitting input based on no-space
         String[] karakterListe = input.split("");
 
         int totalPoeng = 0;
         int antallEmner = 0;
 
         for (String karakter : karakterListe) {
-            karakter = karakter.trim().toUpperCase(); // Fjerner mellomrom og gjør til store bokstaver
+            karakter = karakter.trim().toUpperCase(); // Standarise case and remove spaces
 
             int karakterPoeng = karakterTilPoeng(karakter);
             if (karakterPoeng == 0) {
@@ -22,7 +22,7 @@ public class Poengkalkulator {
                 continue;
             }
 
-            totalPoeng += karakterPoeng * 10; // 10 studiepoeng per emne
+            totalPoeng += karakterPoeng * 10; // Assumes 10 points per course
             antallEmner++;
         }
 
@@ -55,7 +55,7 @@ public class Poengkalkulator {
             case "E":
                 return 10;
             default:
-                return 0; // Ugyldig karakter
+                return 0; // Invalid character
         }
     }
 }
