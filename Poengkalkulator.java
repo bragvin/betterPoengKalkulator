@@ -34,6 +34,9 @@ public class poengKalkulator {
             if (gjennomsnitt > 25) {
                 System.out.println("Master time.");
             }
+            else if (gjennomsnitt == 25) {
+                System.out.println("Barely OK.");
+            }
             else {
                 System.out.println("Get your grades up.");
             }
